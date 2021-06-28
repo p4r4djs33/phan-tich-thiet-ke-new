@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+#timkiem {
+    margin-left: 0px;
+    height: 120px;
+    float: left;
+
+}
+#timkiem ul{
+    margin: 0px;
+    padding: 0px;
+    padding-top: 0px;
+
+}
+#timkiem ul li{
+    list-style: none;
+    float: left;
+    width: 14%;
+}
+#timkiem ul li a{
+    margin: auto;
+    padding-top:10px;
+    text-decoration: none;
+    display: block;
+    color:black;
+    padding: 0px 20px 0px 10px ;
+    background-color: firebrick;
+
+}
+#timkiem .box {
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 40px;
+    background-color: darkcyan;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#timkiem input {
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    transition: 0.8s ease;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+#timkiem input a{
+    color: whitesmoke;
+    text-align: center;
+    width: 60px;
+    font-size: 14px;
+}
+#timkiem .box:hover input {
+    width: 150px;
+    margin: 0 20px;
+    border-bottom: 2px solid red;
+}
+#timkiem input:focus {
+    width: 150px;
+    margin: 0 20px;
+    border-bottom: 2px solid red;
+}
+#timkiem input::placeholder {
+    color: antiquewhite;
+}
+
+.carousel-inner h4{
+    color:coral;
+}
+.carousel-inner p{
+    color: darkkhaki;
+}
+
+.breadcrumb li{
+    height: 5px;
+}
+.breadcrumb li a{
+    padding-top: 5px;
+}
+.id img{
+    margin-top: 10px;
+    margin-right: 30px;
+}
+.media{
+    width: 60%;
+}
+.media-body h4{
+    color: red;
+}
+.media-body h5{
+    color: orange;
+}
