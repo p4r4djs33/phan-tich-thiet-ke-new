@@ -114,13 +114,29 @@ public class CartController {
     //-----XEM GIỎ HÀNG CHI TIẾT
     @GetMapping("/home/cart/{id}/view")
     public ModelAndView viewCart(@PathVariable("id") Long id) {
+        Double sum = 0.;
+        Double discount = 0.;
         Optional<Cart> cartOptional = cartService.findById(id);
         if (!cartOptional.isPresent()) {
             return new ModelAndView("/error.404");
         }
         Iterable<Dish> dishes = dishService.findAllByCart(cartOptional.get());
-
         ModelAndView modelAndView = new ModelAndView("/cart/view");
+        for (Dish dish : dishes) {
+            Double totalDish;
+            totalDish = dish.getPrice() * dish.getAmount();
+            sum = sum + totalDish;
+        }
+        if (sum > 0 && sum < 100000) {
+            discount = 0.1;
+        } else if (sum > 99999 && sum < 500000) {
+            discount = 0.2;
+        } else if (sum > 499999 && sum < 999999 ) {
+            discount = 0.3;
+        }
+        sum = sum - sum * discount;
+        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("discount", discount*100);
         modelAndView.addObject("id", cartOptional.get().getId());
         modelAndView.addObject("cart", cartOptional.get());
         modelAndView.addObject("status", cartOptional.get().getStatus());
@@ -200,11 +216,30 @@ public class CartController {
 
     @GetMapping("/home/cart/{id}/order")
     public ModelAndView order(@PathVariable Long id) {
+        Double sum = 0.;
+        Double discount = 0.;
         ModelAndView modelAndView = new ModelAndView("cart/order");
         Optional<Cart> cartOptional = cartService.findById(id);
         cartOptional.get().setStatus("Đặt hàng");
         cartService.save(cartOptional);
         Iterable<Dish> dishes = dishService.findAllByCart(cartOptional.get());
+        for (Dish dish : dishes) {
+            Double totalDish;
+            totalDish = dish.getPrice() * dish.getAmount();
+            sum = sum + totalDish;
+        }
+
+
+        if (sum > 0 && sum < 100000) {
+            discount = 0.1;
+        } else if (sum > 99999 && sum < 500000) {
+            discount = 0.2;
+        } else if (sum > 499999 && sum < 999999 ) {
+            discount = 0.3;
+        }
+        sum = sum - sum * discount;
+        modelAndView.addObject("discount", discount*100);
+        modelAndView.addObject("sum", sum);
         modelAndView.addObject("cart", cartOptional.get());
         modelAndView.addObject("dishes", dishes);
         return modelAndView;
@@ -220,18 +255,4 @@ public class CartController {
                 " hoàn tất thủ tục");
         return modelAndView;
     }
-/*    //-----hủy đơn hàng
-    @GetMapping("/home/cart/{id}/delete")
-    public ModelAndView delete(@PathVariable("id") Long id) {
-        Optional<Cart> cartOptional = cartService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("cart/delete");
-        modelAndView.addObject("cart", cartOptional.get());
-        return modelAndView;
-    }
-    @PostMapping("/home/cart/delete")
-    public String delete(Cart cart, RedirectAttributes redirectAttributes) {
-        cartService.remove(cart.getId());
-        redirectAttributes.addFlashAttribute("message", "Xóa giỏ hàng thành công");
-        return "redirect:/home/cart";
-    }*/
 }

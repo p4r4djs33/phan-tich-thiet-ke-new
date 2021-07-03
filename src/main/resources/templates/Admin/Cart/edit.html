@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -90,9 +94,9 @@
             <th:block th:each="dish : *{dishes}">
                 <tr>
                     <td th:text="${dish.name}"></td>
-                    <td th:text="${dish.amount}"></td>
-                    <td th:text="${dish.price}"></td>
-                    <td th:with="variable = ${dish.amount}, controllerVar = ${dish.price}, var = ${variable * controllerVar}"
+                    <td id="amount" th:text="${dish.amount}"></td>
+                    <td id="price" th:text="${dish.price}" th:value="${dish.price}"></td>
+                    <td id="variable" th:with="variable = ${dish.amount}, controllerVar = ${dish.price}, var = ${variable * controllerVar}"
                         th:text="${var}"></td>
                     <td th:text="${dish.cart.dateCreated}"></td>
                 </tr>
@@ -100,7 +104,15 @@
         </table>
         <h4>Tổng tiền hàng của khách là</h4>
         <h4>
-            <th:block th:text="*{#aggregates.sum(dishes.![price*amount])}"></th:block>
+            <th:block id="total" th:text="*{#aggregates.sum(dishes.![price*amount])}"></th:block>
+        </h4>
+        <h4> Đơn hàng được giảm:
+            <th:block th:text="${discount+'%'}"></th:block>
+            <i title="Xem giảm giá" class="fa fa-question-circle" onclick="return clickButtonDiscount()"></i>
+        </h4>
+
+        <h4>Tổng tiền đơn hàng hiện tại là:
+            <th:block th:text="${sum}" th:value="${sum}" id="sum"></th:block>
         </h4>
         <hr style="border: 1px solid tan">
         <div id="form">
@@ -180,5 +192,26 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+    });
+    function clickButtonDiscount() {
+        var str = "Đơn hàng từ 0k -> 99.999k: 10%\n" +
+            "Đơn hàng từ 100.000k -> 499.999k: 20%\n" +
+            "Đơn hàng từ 500.000k -> 1.000.000k: 30%\n"
+
+        Swal.fire({
+            position: 'middle',
+            icon: 'info',
+            title: 'Thông báo',
+            width: 600,
+            fontsize: 20,
+            html: '<pre>' + str + '</pre>',
+            customClass: {
+                popup: 'format-pre'
+            }
+        });
+    }
+</script>
 </body>
 </html>

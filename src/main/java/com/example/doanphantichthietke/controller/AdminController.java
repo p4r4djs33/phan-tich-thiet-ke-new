@@ -145,9 +145,26 @@ public class AdminController {
     //-----CHỈNH SỬA TÌNH TRẠNG GIỎ HÀNG
     @GetMapping("/admin/{id}/edit")
     public ModelAndView editCart(@PathVariable("id") Long id) {
+        Double sum = 0.;
+        Double discount = 0.;
         Optional<Cart> cart = cartService.findById(id);
         Iterable<Dish> dishes = dishService.findAllByCart(cart.get());
+        for (Dish dish : dishes) {
+            Double totalDish;
+            totalDish = dish.getPrice() * dish.getAmount();
+            sum = sum + totalDish;
+        }
+        if (sum > 0 && sum < 100000) {
+            discount = 0.1;
+        } else if (sum > 99999 && sum < 500000) {
+            discount = 0.2;
+        } else if (sum > 499999 && sum < 999999 ) {
+            discount = 0.3;
+        }
+        sum = sum - sum * discount;
         ModelAndView modelAndView = new ModelAndView("Admin/Cart/edit");
+        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("discount", discount*100);
         modelAndView.addObject("cart", cart.get());
         modelAndView.addObject("dishes", dishes);
         return modelAndView;
