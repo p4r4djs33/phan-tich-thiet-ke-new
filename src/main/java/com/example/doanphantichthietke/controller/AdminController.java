@@ -1,9 +1,7 @@
 package com.example.doanphantichthietke.controller;
 
 
-import com.example.doanphantichthietke.model.Cart;
-import com.example.doanphantichthietke.model.Dish;
-import com.example.doanphantichthietke.model.MainDish;
+import com.example.doanphantichthietke.model.*;
 import com.example.doanphantichthietke.service.admin.AdminService;
 import com.example.doanphantichthietke.service.cart.CartService;
 import com.example.doanphantichthietke.service.dish.DishService;
@@ -15,14 +13,12 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -37,6 +33,47 @@ public class AdminController {
     CartService cartService;
     @Autowired
     MainDishService mainDishService;
+
+
+    /*//-----ADMIN LOGIN
+    @GetMapping("/admin/login")
+    public ModelAndView login() {
+        ModelAndView modelAndView = new ModelAndView("admin/login");
+        modelAndView.addObject("login", new Login());
+        return modelAndView;
+    }
+    @PostMapping("/admin/sign-in")
+    public ModelAndView signIn(@ModelAttribute("login") Login login, RedirectAttributes redirectAttributes) throws NullPointerException {
+        Iterable<Admin> admins = admin.findAll();
+        Admin admin = new Admin();
+        for (Admin a : admins) {
+            if (a.getAccount().equals(login.getAccount())
+                    && a.getPassword().equals(login.getPassword())) {
+                admin = a;
+                break;
+            } else {
+                admin = null;
+            }
+        }
+        ModelAndView modelAndView;
+        if (admin.getAccount() == null && admin.getPassword() == null || admin == null) {
+            redirectAttributes.addFlashAttribute("message", "Bạn đã nhập tài khoản hoặc mật khẩu sai, xin mời " +
+                    "nhập lại");
+            modelAndView = new ModelAndView("redirect:/admin/login");
+        } else {
+            modelAndView = new ModelAndView("redirect:/admin");
+        }
+        return modelAndView;
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public String nullClient(Model model, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("message", "Bạn đã nhập tài khoản hoặc mật khẩu sai, xin mời nhập lại");
+
+        return "redirect:/admin/login";
+    }*/
+
+
 
     //-----HOME PAGE
     @GetMapping("/admin")
