@@ -15,7 +15,7 @@
     <title>Delete form</title>
 </head>
 <body style="background-color: antiquewhite">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-3" style="background-color:firebrick">
             <div class="abc">
@@ -49,30 +49,21 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="/pictures2/16.jpg" alt="Chania" style="width: 360px;height: 120px;">
-                        <div class="carousel-caption">
-                            <h4>Món Hot</h4>
-                            <p>gà cay sốt thần thánh</p>
-                        </div>
+                        <img src="/pictures/KFC-50-50_HeroBannerV3.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                     <div class="item">
-                        <img src="/pictures2/6.jpg" alt="Chania" style="width: 360px;height: 120px;">
-                        <div class="carousel-caption">
-                            <h4>Món mới</h4>
-                            <p>mì trộn hàn quốc</p>
-                        </div>
+                        <img src="/pictures2/slider.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                     <div class="item">
-                        <img src="/pictures2/15.jpg" alt="Chania" style="width: 360px;height: 120px;">
-                        <div class="carousel-caption">
-                            <h4>khuyến mãi đặc biệt</h4>
-                            <p>kim bap chiên trứng</p>
-                        </div>
+                        <img src="/pictures2/maxresdefault.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                 </div>
             </div>
         </div>
-
+    </div></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 col-xs-8">
 
 <p>
     <a th:href="@{/admin/dish}"><button>Quay trở lại danh sách món ăn</button></a>
@@ -84,7 +75,7 @@
     <form action="#" th:action="@{/admin/dish/delete}" th:object="${mainDish}" method="post">
         <fieldset>
             <legend>Thông tin món ăn</legend>
-            <div id="abbb" style="border:  solid 3px #770000; margin-bottom: 100px ">
+            <div id="abbb" style="border:  solid 3px #770000; margin-bottom: 50px ">
                 </br>
             <tr>
                 <td></td>
@@ -117,28 +108,62 @@
         </fieldset>
     </form>
 </div>
-        <div id="footer" class="container" style="background-color:aquamarine;height: 80px;">
-            <div class="row"></div>
-            <div class="col-md-7 col-sm-7 col-xs-7">
-                <ul class="breadcrumb" style="background-color: aquamarine">
-                    <li><a href="#"><h2>*Giới thiệu</h2></a></li>
-                    <li><a href="#">Hệ thông cửa hàng</a></li>
-                    <li><a href="#">Khuyến mại</a></li>
-                    <li><a href="#">Tuyển dụng</a></li>
-                    <li><a href="#">liên hệ</a></li>
-                </ul>
-            </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4" >
 
-            <div class="col-md-5 col-sm-5 col-xs-5">
-                <div class="id">
-                    <a href="https://www.facebook.com"><img src="/pictures2/face.png" style="width: 40px; height: 40px"></a>
-                    <a href="https://twitter.com"><img src="/pictures2/tw.jpg" style="width: 40px; height: 40px"></a>
-                    <a href="https://chat.zalo.me"><img src="/pictures2/za.webp" style="width: 40px; height: 40px"></a>
-                    <a href="https://www.youtube.com"><img src="/pictures2/you.png" style="width: 40px; height: 40px"></a>
-                    <a href="https://www.google.com"><img src="/pictures2/gg.png" style="width: 40px; height: 40px"></a>
-                    <a href="https://www.google.com/maps"><img src="/pictures2/ggm.png" style="width: 40px; height: 40px"></a>
-                </div></div>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <img src="/pictures2/kfc-2.jpg" class="media-object" style="width:200px ; height: 150px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Combo khuyến mãi siêu đỉnh gà rán 349k</h4>
+                            <p> xuất gà rán siêu đỉnh chỉ áp dụng từ 15/7 - 15/8</p>
+                            <h6> combo gồm bộ Tứ: cánh gà - đùi gà - khoai tây chiên - Coca. xuất dành cho 2-3 người</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <img src="/pictures2/cac-mon-an-vat.jpg" class="media-object" style="width:200px ; height: 150px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Combo đồ ăn Hàn 549k</h4>
+                            <p> Siêu ưu đãn combo chỉ áp dụng vào khung giờ vàng (9h-12h và 16h-20h) chủ nhật hàng tuần</p>
+                            <h6> combo gồm : kimpap, viên pho mai, khoai tây chiên , gà rán gà cay,pizza size M, mì hàn,Mì đen , Coca... </h6>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <img src="/pictures2/sandwich_KFC.jpg" class="media-object" style="width:200px ; height: 150px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Bánh Sandwich 2 tầng chỉ với 39k</h4>
+                            <p> chỉ áp dụng với đơn hàng trên 99k</p>
+                            <h6> Siêu phẩm bánh Sandwich mới ra lò với 2 lớp thịt gà và 1 lớp khoai. </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+<div id="footer"  style="background-color:aquamarine;height: 70px;">
+    <div id="footer1" style="width: 50% ; float: left">
+        <ul class="breadcrumb" style="background-color: aquamarine">
+            <li><a href="#"><h2>*Giới thiệu</h2></a></li>
+            <li><a href="#">Hệ thông cửa hàng</a></li>
+            <li><a href="#">Khuyến mại</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">liên hệ</a></li>
+        </ul>
+    </div>
+    <div id="footer2" style="width: 50% ; float: left">
+        <a href="https://www.facebook.com"><img src="/pictures2/face.png" style="width: 40px; height: 40px"></a>
+        <a href="https://twitter.com"><img src="/pictures2/tw.jpg" style="width: 40px; height: 40px"></a>
+        <a href="https://chat.zalo.me"><img src="/pictures2/za.webp" style="width: 40px; height: 40px"></a>
+        <a href="https://www.youtube.com"><img src="/pictures2/you.png" style="width: 40px; height: 40px"></a>
+        <a href="https://www.google.com"><img src="/pictures2/gg.png" style="width: 40px; height: 40px"></a>
+        <a href="https://www.google.com/maps"><img src="/pictures2/ggm.png" style="width: 40px; height: 40px"></a>
     </div>
 </div>
 </body>

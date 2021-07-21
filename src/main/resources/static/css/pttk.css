@@ -91,7 +91,7 @@
     margin-right: 30px;
 }
 .media{
-    width: 60%;
+    width: 100%;
 }
 .media-body h4{
     color: red;
@@ -105,7 +105,7 @@
 
 }
 #employees thead tr th{
-    padding: 30px 60px 30px 60px;
+    padding: 30px 45px 30px 45px;
     text-align: center;
     background-color:#F4A460 ;
 }
@@ -118,7 +118,7 @@
     background-color:#F5F5DC
 }
 #employees1 thead tr th{
-    padding: 50px 130px 50px 130px;
+    padding: 50px 80px 50px 80px;
     text-align: center;
     background-color:#F4A460 ;
 }
@@ -127,7 +127,7 @@
     background-color:#F5F5DC
 }
 #employees2 thead tr th{
-    padding: 40px 100px 40px 100px;
+    padding: 40px 70px 40px 70px;
     text-align: center;
     background-color:#F4A460 ;
 }
@@ -141,7 +141,7 @@
 
 }
 #employees3 thead tr th{
-    padding: 30px 77px 30px 60px;
+    padding: 30px 70px 30px 50px;
     text-align: center;
     background-color:#F4A460 ;
 }
@@ -179,7 +179,7 @@
 
 }
 #employees5 thead tr th{
-    padding: 30px 116px 30px 60px;
+    padding: 30px 90px 30px 50px;
     text-align: center;
     background-color:#F4A460 ;
 }
@@ -196,4 +196,11 @@
     position: fixed;
     bottom: 0;
     height: auto;
+    width: 100%;
+}
+#footer2 img{
+    clear: left;
+    float: right;
+    margin-left: 50px;
+    margin-top: 20px;
 }
