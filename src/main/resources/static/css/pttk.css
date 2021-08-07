@@ -28,7 +28,7 @@
     display: block;
     color:black;
     padding: 0px 20px 0px 10px ;
-    background-color: firebrick;
+    background-color: bisque;
 
 }
 #timkiem .box {
@@ -107,7 +107,7 @@
 #employees thead tr th{
     padding: 30px 45px 30px 45px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue ;
 }
 
 #employees thead tr{
@@ -115,25 +115,25 @@
 }
 #employees tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew
 }
 #employees1 thead tr th{
     padding: 50px 80px 50px 80px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue ;
 }
 #employees1 tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew;
 }
 #employees2 thead tr th{
     padding: 40px 70px 40px 70px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue  ;
 }
 #employees2 tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew;
 }
 #employees3 {
     text-align:center;
@@ -143,7 +143,7 @@
 #employees3 thead tr th{
     padding: 30px 70px 30px 50px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue  ;
 }
 
 #employees3 thead tr{
@@ -151,7 +151,7 @@
 }
 #employees3 tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew;
 }
 #employees4 {
     text-align:center;
@@ -161,7 +161,7 @@
 #employees4 thead tr th{
     padding: 30px 116px 30px 60px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue  ;
 }
 
 #employees4 thead tr{
@@ -170,7 +170,7 @@
 }
 #employees4 tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew;
 }
 
 #employees5 {
@@ -181,7 +181,7 @@
 #employees5 thead tr th{
     padding: 30px 90px 30px 50px;
     text-align: center;
-    background-color:#F4A460 ;
+    background-color: lightblue ;
 }
 
 #employees5 thead tr{
@@ -190,7 +190,7 @@
 }
 #employees5 tbody  tr {
     text-align: center;
-    background-color:#F5F5DC
+    background-color: honeydew;
 }
 #footer{
     position: fixed;

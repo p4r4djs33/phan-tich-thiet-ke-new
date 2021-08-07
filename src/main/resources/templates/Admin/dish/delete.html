@@ -14,15 +14,15 @@
     <meta charset="UTF-8">
     <title>Delete form</title>
 </head>
-<body style="background-color: antiquewhite">
-<div class="container-fluid">
+<body>
+<div class="container-fluid" style="margin-bottom:50px">
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color:firebrick">
+        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color: bisque">
             <div class="abc">
                 <img src="/pictures2/logo2.png" style="width: 280px;height: 120px;">
             </div>
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color:firebrick">
+        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color: bisque">
             <div id ="timkiem">
                 <ul>
                     <li><a th:href="@{/home}" title="HOME"><strong>Trang chủ</strong></a></li>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:firebrick ; color: khaki;">
+        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color: bisque ; color: khaki;">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -58,32 +58,33 @@
                         <img src="/pictures2/maxresdefault.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                 </div>
+
             </div>
-        </div>
-    </div></div>
+        </div></div>
+</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-8">
 
 <p>
-    <a th:href="@{/admin/dish}"><button>Quay trở lại danh sách món ăn</button></a>
+    <a th:href="@{/admin/dish}"><button class="btn btn-primary">Quay trở lại danh sách món ăn</button></a>
 </p>
 
 
 <div id="form">
-    <h3>Bạn có muốn xóa món ăn này không?</h3>
+    <h3 style="color: #770000">Bạn có muốn xóa món ăn này không?</h3>
     <form action="#" th:action="@{/admin/dish/delete}" th:object="${mainDish}" method="post">
         <fieldset>
             <legend>Thông tin món ăn</legend>
-            <div id="abbb" style="border:  solid 3px #770000; margin-bottom: 50px ">
+            <div id="abbb" style="background-color: beige;border:  solid 3px #770000; margin-bottom: 50px ">
                 </br>
             <tr>
                 <td></td>
-                <label style="margin-right: 78px">ID </label></td>
-                <td><input type="text" th:field="*{id}" readonly ></td></br>
+                <label class="control-label" for="id" style="margin-right: 60px">ID </label></td>
+                <td><input type="text" class="form-control" id="id" th:field="*{id}" readonly ></td></br>
             </tr>
             <tr>
-                <td><label class="control-label" for="mota" style="margin-right: 60px">Mô tả          </label></td>
+                <td><label class="control-label" for="mota" style="margin-right: 60px">Mô tả</label></td>
                 <td><input type="text" class="form-control" id="mota" th:field="*{description}" readonly></td></br>
             </tr>
             <tr>
@@ -102,9 +103,9 @@
                 <td><label  class="control-label" for="gia" style="margin-right: 50px">Đơn giá      </label></td>
                 <td><input type="text" class="form-control" id="gia" th:field="*{price}" readonly></td></br>
             </tr>
-            <td><input type="submit" value="Xóa món"></td>
+            <td><input type="submit" class="btn btn-danger" value="Xóa món"></td>
             </tr>
-            </br></div>
+            </br></br></div>
         </fieldset>
     </form>
 </div>

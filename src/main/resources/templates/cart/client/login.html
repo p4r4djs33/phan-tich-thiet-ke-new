@@ -18,16 +18,16 @@
 
 
 </head>
-<body style="background-color:antiquewhite;">
-<div class="container-fluid">
+<body>
+<div class="container-fluid" style="margin-bottom:50px">
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color:firebrick">
+        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color: bisque">
             <div class="abc">
                 <img src="/pictures2/logo2.png" style="width: 280px;height: 120px;">
             </div>
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color:firebrick">
-            <div id="timkiem">
+        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color: bisque">
+            <div id ="timkiem">
                 <ul>
                     <li><a th:href="@{/home}" title="HOME"><strong>Trang chủ</strong></a></li>
                     <li><a th:href="@{/home/client/sign-in}" title="ORDER"><strong>Đặt món</strong></a></li>
@@ -36,7 +36,7 @@
                     <li><a th:href="@{/home/client/sign-up}" title="SIGN-UP"><strong>Đăng kí</strong></a></li>
                     <li><a th:href="@{/home/client/login}" title="LOG-IN"><strong>Đăng nhập</strong></a></li>
                     <li><a href="#" title="CONTACTS"><strong>Liên hệ</strong></a></li>
-                    <input type="text" name="text" id="text" value=""/>
+                    <input type="text" name="text" id="text" value="" />
                 </ul>
                 <div class="box">
                     <input type="text" placeholder="Search here">
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:firebrick ; color: khaki;">
+        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color: bisque ; color: khaki;">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -62,19 +62,19 @@
                         <img src="/pictures2/maxresdefault.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                 </div>
+
             </div>
-        </div>
-    </div>
+        </div></div>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-38 col-sm-8 col-xs-8">
             <h4><a th:href="@{/}">
-                <button>Quay lại trang chủ</button>
+                <button style="height: 40px; width:180px;background-color: blanchedalmond;color: firebrick;border: solid 2px red"><strong>Quay lại trang chủ</strong></button>
             </a></h4>
-            <h4 style="float: left">Chưa có tải khoản?</h4>
+            <h4 style="float: left;color: #770000"><strong>Chưa có tải khoản?</strong></h4>
             <h4><a th:href="@{/home/client/sign-up}">
-                <button style="margin-top: 7px">Đăng ký</button>
+                <button style="height: 30px; width:120px;margin-top: 7px;background-color: aquamarine ; color: darkblue"><strong>Đăng ký</strong></button>
             </a></h4>
             <th:block th:if="${message}">
                 <p th:text="${message}"></p>
@@ -82,7 +82,7 @@
 
             <form action="#" th:action="@{/home/client/sign-in}" method="post" th:object="${login}"
                   class="form-horizontal">
-                <div id="abbb" style="border:  solid 3px #770000 ">
+                <div id="abbb" style="border:  solid 3px #770000;background-color: beige ">
                     </br>
                     <div class="from-group">
                         <label class="control-label" for="account" style="margin-right: 49px">Tài khoản đăng nhập:</label>
@@ -93,7 +93,7 @@
                         <input type="password" class="form-control" id="password" th:field="*{password}">
                     </div>
                     </br></div>
-                <button type="submit" class="btn btn-success" onclick="return validate()">Đăng Nhập</button>
+                <button type="submit" class="btn btn-success" style="width: 110px;height: 40px" onclick="return validate()">Đăng Nhập</button>
             </form>
             <div id="quangcao" style="width: 100%">
             <div id="quangcao1" style="width: 45%; float: left; margin-top: 30px; margin-bottom: 30px ">

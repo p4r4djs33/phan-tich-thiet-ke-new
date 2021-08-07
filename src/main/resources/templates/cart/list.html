@@ -15,15 +15,15 @@
     <script src="/js/homeDish.js" type="text/javascript"></script>
 
 </head>
-<body style="background-color: antiquewhite">
-<div class="container" >
+<body>
+<div class="container-fluid" style="margin-bottom:50px">
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color:firebrick">
+        <div class="col-md-3 col-sm-3 col-xs-3" style="background-color: bisque">
             <div class="abc">
                 <img src="/pictures2/logo2.png" style="width: 280px;height: 120px;">
             </div>
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color:firebrick">
+        <div class="col-md-5 col-sm-5 col-xs-5" style="background-color: bisque">
             <div id ="timkiem">
                 <ul>
                     <li><a th:href="@{/home}" title="HOME"><strong>Trang chủ</strong></a></li>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:firebrick ; color: khaki;">
+        <div class="col-md-4 col-sm-4 col-xs-4" style="background-color: bisque ; color: khaki;">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -59,8 +59,10 @@
                         <img src="/pictures2/maxresdefault.jpg" alt="Chania" style="width: 450px;height: 120px;">
                     </div>
                 </div>
+
             </div>
-        </div>
+        </div></div>
+</div>
 <h3 > Danh Sách Cart</h3>
 <p>
     <a th:href="@{/home/cart/create}"><button> thêm mới cart</button></a>
